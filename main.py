@@ -2,15 +2,17 @@ import random
 import time
 import psycopg2
 
-from user_personal_data.connections import database, password, user, state_storage, token_bot
+from user_personal_data.connections import database, password, user, token_bot
 from user_personal_data.words_for_db import words
 from db_script import create_tables
 from telebot import types, TeleBot, custom_filters
+from telebot.storage import StateMemoryStorage
 
 from telebot.handler_backends import State, StatesGroup
 from telebot.types import ReplyKeyboardRemove
 
 print('Start telegram bot...')
+state_storage = StateMemoryStorage()
 bot = TeleBot(token_bot, state_storage=state_storage)
 
 
@@ -44,18 +46,6 @@ class Command:
 
 class MyStates(StatesGroup):
     target_word = State()
-    translate_word = State()
-    another_words = State()
-
-
-def get_user_step(uid) -> 0:
-    if uid in userStep:
-        return userStep[uid]
-    else:
-        known_users.append(uid)
-        userStep[uid] = 0
-        print("Nun wurde ein neuer Benutzer erkannt \"/start\" noch")
-        return 0
 
 
 def get_words(message) -> list:
@@ -101,6 +91,7 @@ def create_cards(message):
         new_user_insert(message)
         userStep[cid] = 0
         bot.send_message(cid, "Hallo ✌ Möchtest du etwas Englisch lernen?")
+        time.sleep(1)
     markup = types.ReplyKeyboardMarkup(row_width=2)
 
     buttons = []

@@ -19,8 +19,8 @@
 
 ### Docscreens' list:
 
-- [Главный код](docstring_for_main.md)
-- [Код базы данных](docstring_for_db_script.md)
+- [Главный код](docstrings/docstring_for_main.md)
+- [Код базы данных](docstrings/docstring_for_db_script.md)
 
 ### Data base tables:
 

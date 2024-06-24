@@ -12,7 +12,7 @@ def drop_tables():
                 ''')
             except psycopg2.errors.UndefinedTable:
                 print('Mistake')
-        conn.close()
+    conn.close()
 
 
 def create_tables():
