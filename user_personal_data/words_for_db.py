@@ -1,0 +1,12 @@
+words = [('die Zeit', 'time'),
+         ('das Beispiel', 'example'),
+         ('das Jahr', 'year'),
+         ('ganz', 'entire'),
+         ('hilfsbereit', 'helpful'),
+         ('böse', 'evil'),
+         ('gebraten', 'fried'),
+         ('scharf', 'spicy'),
+         ('faul', 'lasy'),
+         ('gefährlich', 'dangerous'),
+         ('genervt', 'annoyed'),
+         ('wieder', 'again')]
